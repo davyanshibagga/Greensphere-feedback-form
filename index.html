@@ -10,7 +10,9 @@
 <body>
     <div class="container">
         <img src="../static/feedback.png" alt="greensphere" class="logo">
-        
+        {% if message %}
+        <p class="message">{{ message | safe }}</p>
+        {% endif %}
         <form action="/submit" method="POST">
           <div class="form-group">
             <h3>Participant Name</h3>
@@ -22,9 +24,9 @@
             />
           </div>
           <div class="form-group">
-            <h3>speaker</h3>
-            <select name="Speaker">
-              <option value="">Select Dealer</option>
+            <h3>Speaker</h3>
+            <select name="speaker">
+              <option value="">Select speaker</option>
               <option value="Davyanshi bagga">Davyanshi bagga</option>
               <option value="Aeshna">Aeshna</option>
               <option value="Rushali">Rushali</option>
